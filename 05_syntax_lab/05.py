@@ -1,5 +1,6 @@
-"""
-Write a program that randomizes integers in a loop
-until it finds a number that is divisable by: 7, 13 and 15
-"""
+from random import randint
 
+while True:
+    number = randint(1, 1000000)
+    if number % (7*13*15) == 0: break
+print 'The number is %d.' %number
