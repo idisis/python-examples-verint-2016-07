@@ -1,8 +1,11 @@
-""" Write a program that selects a random number
-and asks the user to guess it.
+from random import randint
+number = randint(1, 100)
 
-After each guess print a hint "too large" or "too small" to the user.
-
-Bonus: To make things interesting, the program should cheat once in a white
-"""
+print 'I\'m thinking of a number between 1 and 100...'
+while True:
+  guess = int(raw_input('take a guess: '))
+  if (guess == number):
+      print 'that\'s right!'
+      break
+  print 'a little bit %s...' %('higher' if guess < number or randint(0, 9) == 0 else 'lower')
 
