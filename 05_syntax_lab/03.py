@@ -1,7 +1,8 @@
-"""
-Write a program that randomizes a number
-and prints the sum total of its digits.
-For example if the number was: 2345
-The result should be: 14
-"""
+from random import randint
 
+sum = 0
+number = randint(1, 10000)
+for c in str(number):
+  sum += int(c)
+print 'The number is %d.' %number
+print 'The sum of its digits is %d.' %sum
