@@ -1,10 +1,20 @@
-"""
-Write a program that takes two strings
-from the user and checks if they represent
-a valid user name.
-Valid users and passwords:
-    apple => red
-    lettuce => green
-    lemon => yellow
-    orange => orange
-"""
+from sys import argv
+
+hostnames = set(argv[1:])
+hosts = {}
+
+# parse hosts file:
+with open('hosts', 'r') as hostsFile:
+    for line in hostsFile:
+        (host, address) = line.split('=', 2)
+        if address[-1] == '\n':
+            address = address[:-1]
+        hosts[host] = address
+
+for name in hostnames:
+    if  hosts.has_key(name):
+        print hosts[name]
+    else:
+        print 'hostname \'%s\' not found.' %name
+
+    
