@@ -1,6 +1,6 @@
 import argparse 
 
-parser = argparse.ArgumentParser(description='Combine two text files with interleave.')
+parser = argparse.ArgumentParser(description='Concatenate two text files.')
 parser.add_argument('a', help='first file.')
 parser.add_argument('b', help='second file.')
 parser.add_argument('o', help='Output file.')
